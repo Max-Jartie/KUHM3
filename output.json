@@ -1,0 +1,18 @@
+{
+    "app_name": "MyApp",
+    "version": "1.0.3",
+    "debug_mode": true,
+    "node": true,
+    "max_connections": 15,
+    "database": "app_db",
+    "user": "admin",
+    "password": "secret",
+    "max_value": 10,
+    "sqrt_value": 5.0,
+    "val": 5.0,
+    "features": [
+        "authentication",
+        "logging",
+        "notifications"
+    ]
+}

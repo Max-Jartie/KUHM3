@@ -1,0 +1,9 @@
+#|
+Конфигурация сети
+|#
+
+begin
+    host := 'localhost';
+    port := 8080;
+    retry := {10 2 +};
+end

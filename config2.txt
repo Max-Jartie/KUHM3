@@ -1,0 +1,9 @@
+#|
+Настройки для обработки данных
+|#
+
+begin
+    data_path := '/data/input';
+    backup := true;
+    batch_size := {10 20 max};
+end
