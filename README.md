@@ -110,15 +110,15 @@ python -m pytest test_main.py
 Конфигурация сети
 |#
 
-begin
+    begin
 
-    host := 'localhost';
+        host := 'localhost';
     
-    port := 8080;
+        port := 8080;
     
-    retry := {10 2 +};
+        retry := {10 2 +};
     
-end
+    end
 
 Пример команды:
 
@@ -126,21 +126,21 @@ python main.py < config1.txt > output1.json
 
 Пример результата (output1.json):
 
-{
-    "app_name": "MyApp",
-    "version": "1.0.3",
-    "debug_mode": true,
-    "node": true,
-    "max_connections": 15,
-    "database": "app_db",
-    "user": "admin",
-    "password": "secret",
-    "max_value": 10,
-    "sqrt_value": 5.0,
-    "val": 5.0,
-    "features": [
-        "authentication",
-        "logging",
-        "notifications"
-    ]
-}
+     {
+         "app_name": "MyApp",
+         "version": "1.0.3",
+         "debug_mode": true,
+         "node": true,
+         "max_connections": 15,
+         "database": "app_db",
+         "user": "admin",
+         "password": "secret",
+         "max_value": 10,
+         "sqrt_value": 5.0,
+         "val": 5.0,
+         "features": [
+             "authentication",
+             "logging",
+             "notifications"
+         ]
+     }
