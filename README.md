@@ -25,7 +25,6 @@
 Имена:
 [_a-z]
 
-
 Значения:
 • Числа.
 • Строки.
@@ -90,7 +89,7 @@ bash install_depenseties.sh
 python main.py < input.txt
 Результат трансляции будет выведен в стандартный вывод (stdout).
 Пример команды:
-python main.py < config1.txt > output1.toml
+python main.py < config1.txt > output1.json
 
 
 Тестирование
@@ -106,25 +105,42 @@ python -m pytest test_main.py
 
 
 Пример входного файла (config1.txt):
-{
-  server_host : q(localhost),
-  server_port : 8080,
-  database : {
-    url : q(postgresql://user:password@localhost/dbname),
-    max_connections : 100
-  },
-  debug_mode : true
-}
+
+#|
+Конфигурация сети
+|#
+
+begin
+
+    host := 'localhost';
+    
+    port := 8080;
+    
+    retry := {10 2 +};
+    
+end
+
 Пример команды:
-python main.py < config1.txt > output1.toml
-Пример результата (output1.toml):
-server_host = "localhost"
-server_port = 8080
-[database]
-url = "postgresql://user:password@localhost/dbname"
-max_connections = 100
-debug_mode = true
-Структура тестов
-test_config_loader.py: Проверяет корректность обработки входных данных.
-test_translator.py: Проверяет корректность трансляции и работы с константными выражениями.
-test_main.py: Интеграционные тесты для основной программы. 
+
+python main.py < config1.txt > output1.json
+
+Пример результата (output1.json):
+
+{
+    "app_name": "MyApp",
+    "version": "1.0.3",
+    "debug_mode": true,
+    "node": true,
+    "max_connections": 15,
+    "database": "app_db",
+    "user": "admin",
+    "password": "secret",
+    "max_value": 10,
+    "sqrt_value": 5.0,
+    "val": 5.0,
+    "features": [
+        "authentication",
+        "logging",
+        "notifications"
+    ]
+}
